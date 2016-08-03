@@ -244,11 +244,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-Android Studio 中多个module引用同一个jar（或者冲突解决）解决方案1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Android Studio 中多个module引用同一个jar（或者冲突解决）解决方案" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/03/Android Studio 中多个module引用同一个jar（或者冲突解决）解决方案1/" class="article-date">
-      <time datetime="2016-08-03T13:14:55.711Z" itemprop="datePublished">2016-08-03</time>
+      <a href="/2016/08/03/Android Studio 中多个module引用同一个jar（或者冲突解决）解决方案/" class="article-date">
+      <time datetime="2016-08-03T13:27:56.339Z" itemprop="datePublished">2016-08-03</time>
 </a>
     </div>
   
@@ -260,41 +260,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>#Android Studio �ж���module����ͬһ��jar�����߳�ͻ��������������</p>
-<hr>
-<h2 id="����ת�ԣ�http-blog-csdn-net-u013134391-article-details-51538511"><a href="#����ת�ԣ�http-blog-csdn-net-u013134391-article-details-51538511" class="headerlink" title="######����ת�ԣ�http://blog.csdn.net/u013134391/article/details/51538511"></a>######����ת�ԣ�<a href="http://blog.csdn.net/u013134391/article/details/51538511" target="_blank" rel="external">http://blog.csdn.net/u013134391/article/details/51538511</a></h2><p>####��Android�������������Ƕ������ٻ�����module��������������Ŀ�Ŀ������ȣ�������Ŀ���������൱���㡣</p>
-<h2 id="����ͬһ����L����������module����ͬһ��jar���г�ͻ��jarʱ���ڱ�����ʱ�������ִ�������Щ������������ץ����"><a href="#����ͬһ����L����������module����ͬһ��jar���г�ͻ��jarʱ���ڱ�����ʱ�������ִ�������Щ������������ץ����" class="headerlink" title="####����ͬһ����Ŀ����������module����ͬһ��jar���г�ͻ��jarʱ���ڱ�����ʱ�������ִ�������Щ������������ץ����"></a>####����ͬһ����Ŀ����������module����ͬһ��jar���г�ͻ��jarʱ���ڱ�����ʱ�������ִ�������Щ������������ץ����</h2><ul>
-<li>�ڽ�����Щ����֮ǰ�����������˽��¹���module�ļ���������ʽ��������ֱ�ӿ�����������������</li>
-</ul>
-<ol>
-<li>compile<br>compile�Ƕ����е�build type�Լ�favlors�����������벢�Ҵ��������յ�apk�ļ��С�</li>
-<li>Provided<br>Provided�Ƕ����е�build type�Լ�favlorsֻ�ڱ���ʱʹ�ã�����eclipse�е�external-libs,ֻ�������룬������������apk��</li>
-<li>APK<br>ֻ��������apk�ļ��У������������룬���Բ����ٴ�����ֱ�ӵ���jar�е����򷽷��������ڱ���ʱ�ᱨ��</li>
-<li>Test compile<br>Test compile ���������Ե�Ԫ���Դ����ı��������Լ����մ�������apkʱ��Ч������������debug����release apk���������á�</li>
-<li>Debug compile<br>Debug compile ��������debugģʽ�ı��������յ�debug apk����</li>
-<li>Release compile<br>Release compile ��������Release ģʽ�ı��������յ�Release apk������</li>
-</ol>
-<hr>
-<ul>
-<li>��ͻ��������<br>������Ҫ�õ���Provided��������д������ʱ��������������Module������ʹ��jar�е��࣬����Ҫ��һ��Module��compile�ķ�ʽ��������jar������������ʱ��ֻ��һ��jar������apk��<br>������������module����ͬʱ����һ��jar����ʱ��������ͻ��</li>
-</ul>
-<ol>
-<li>��һ��module�������κθı䡣</li>
-<li>������һ��module����jar�ķ�ʽΪProvided��������module������jar�ڱ���ʱ������ʹ�ã������벻�ᱨ�������ɵ�apk����������jar����apk����ʱ����һ��module��jar�Ṳ����moduleʹ�ã�Ҳ����˵compile������ʽ�ǶԹ����еĵ��ã���Ȼ�ڱ���ʱ�����ܱ����á�����������module����Ŀ�⣩</li>
-</ol>
-<h2 id="ע��ʹ��Provided����ɾ��compile-fileTree-include-‘-jar’-dir-‘libs’-��Clib�µ�jar������compile��ʽ���뵽Module"><a href="#ע��ʹ��Provided����ɾ��compile-fileTree-include-‘-jar’-dir-‘libs’-��Clib�µ�jar������compile��ʽ���뵽Module" class="headerlink" title=" ע��ʹ��Provided����ɾ��compile fileTree(include: [‘.jar’], dir: ‘libs’) ��Ȼlib�µ�jar������compile��ʽ���뵽Module  "></a><em> ע��ʹ��Provided����ɾ��compile fileTree(include: [‘</em>.jar’], dir: ‘libs’) ��Ȼlib�µ�jar������compile��ʽ���뵽Module  </h2><ul>
-<li>###��������</li>
-</ul>
-<ol>
-<li>������Ŀ��ʹ����Alipay��֧��������������һ��Alipay��module����������libs�� ��һalipay.jar��</li>
-<li>������Ŀ���������������ͣ������͵�module��������jar�ļ���alipay.jar�ļ�������ͻ��</li>
-<li><p>����ѡ��һ�����뷽ʽ���ó�Provided����ΪAlipayֻ������alipay.jar����ѡ����Alipay��Alilpay.build�ļ���ɾ��</p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ɾ����������</span></div><div class="line"><span class="function">compile <span class="title">fileTree</span><span class="params">(include: [<span class="string">'*.jar'</span>], dir: <span class="string">'libs'</span>)</span></span></div><div class="line"></div><div class="line"><span class="comment">//����</span></div><div class="line">provided <span class="title">files</span><span class="params">(<span class="string">'libs/Alipay.jar)</span></span></div></pre></td></tr></table></figure>
-</li>
-<li><p>��Ϊ��������jar�Ǻ�Alipay��֧��jar��ͻ������������ͬһ��jar�����Խ�����ʽ�ǰ���������jar���ֳ�alipay.jar �� ȥtuuid���������͵�jar��ͳһ����libs��</p>
-</li>
-<li>����release apk ������ok!!!!</li>
-</ol>
+        <p>#12356</p>
 
       
     </div>
