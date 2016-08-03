@@ -279,14 +279,14 @@
 </ul>
 <p>###注意事项：react-native &gt;0.17</p>
 <ol>
-<li>安装 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install react-native-wx --save</div></pre></td></tr></table></figure>
+<li><p>安装</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install react-native-wx --save</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置(Android)</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//  项目下  android/settings.gradle 添加以下配置 </div><div class="line">    </div><div class="line">include ':react-native-wx'</div><div class="line">project(':react-native-wx').projectDir = new File(settingsDir, '../node_modules/react-native-wx/android')</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<ol>
-<li>配置(Android) <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//  项目下  android/settings.gradle 添加以下配置 </div><div class="line">    </div><div class="line">include ':react-native-wx'</div><div class="line">project(':react-native-wx').projectDir = new File(settingsDir, '../node_modules/react-native-wx/android')</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//  项目下  android/app/build.gradle 添加以下配置 </span></div><div class="line">    </div><div class="line">dependencies &#123;</div><div class="line">    ...</div><div class="line">    compile project(<span class="string">':react-native-wx'</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//  项目下  android/app/build.gradle 添加以下配置 </span></div><div class="line">dependencies &#123;</div><div class="line">    ...</div><div class="line">    compile project(<span class="string">':react-native-wx'</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 
 <figure class="highlight plain"><figcaption><span>添加引入的包名```import cn.reactnative.modules.wx.WeChatPackage;```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">```java</div><div class="line">//MainActivity.java根据版本不同添加</div><div class="line">//.addPackage(new WeChatPackage())</div><div class="line"></div><div class="line">,new WeChatPackage()</div></pre></td></tr></table></figure>

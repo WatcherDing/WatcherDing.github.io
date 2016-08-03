@@ -19,7 +19,7 @@
 还有另一个微信插件没有测试过，有兴趣的同学可以试试react-native-wechat
 
 使用方法(使用之前请确保在微信开放平台注册了账号并且创建App并通过审核。没有审核情况下没有试过，">
-<meta property="og:updated_time" content="2016-08-03T12:42:39.154Z">
+<meta property="og:updated_time" content="2016-08-03T12:47:05.739Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native微信分享插件">
 <meta name="twitter:description" content="今天在项目中修改之前微信分享调用微信后闪退的bug。上一个项目做微信分享的时候没有遇到这个问题。
@@ -297,14 +297,14 @@
 </ul>
 <p>###注意事项：react-native &gt;0.17</p>
 <ol>
-<li>安装 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install react-native-wx --save</div></pre></td></tr></table></figure>
+<li><p>安装</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install react-native-wx --save</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置(Android)</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//  项目下  android/settings.gradle 添加以下配置 </div><div class="line">    </div><div class="line">include ':react-native-wx'</div><div class="line">project(':react-native-wx').projectDir = new File(settingsDir, '../node_modules/react-native-wx/android')</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<ol>
-<li>配置(Android) <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//  项目下  android/settings.gradle 添加以下配置 </div><div class="line">    </div><div class="line">include ':react-native-wx'</div><div class="line">project(':react-native-wx').projectDir = new File(settingsDir, '../node_modules/react-native-wx/android')</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//  项目下  android/app/build.gradle 添加以下配置 </span></div><div class="line">    </div><div class="line">dependencies &#123;</div><div class="line">    ...</div><div class="line">    compile project(<span class="string">':react-native-wx'</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//  项目下  android/app/build.gradle 添加以下配置 </span></div><div class="line">dependencies &#123;</div><div class="line">    ...</div><div class="line">    compile project(<span class="string">':react-native-wx'</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
 
 <figure class="highlight plain"><figcaption><span>添加引入的包名```import cn.reactnative.modules.wx.WeChatPackage;```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">```java</div><div class="line">//MainActivity.java根据版本不同添加</div><div class="line">//.addPackage(new WeChatPackage())</div><div class="line"></div><div class="line">,new WeChatPackage()</div></pre></td></tr></table></figure>
@@ -342,7 +342,7 @@
         <p><span>本文标题:</span><a href="/2016/08/01/React-Native微信分享插件/">React Native微信分享插件</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 WatcherDing 的个人博客">WatcherDing</a></p>
         <p><span>发布时间:</span>2016年08月01日 - 19时21分</p>
-        <p><span>最后更新:</span>2016年08月03日 - 20时42分</p>
+        <p><span>最后更新:</span>2016年08月03日 - 20时47分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/08/01/React-Native微信分享插件/" title="React Native微信分享插件">http://yoursite.com/2016/08/01/React-Native微信分享插件/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/08/01/React-Native微信分享插件/　　作者: WatcherDing" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
