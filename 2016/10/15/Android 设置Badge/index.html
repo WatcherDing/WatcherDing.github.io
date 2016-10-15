@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion">
+<html class="theme-next muse use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/10/15/Android 设置Badge/index.html">
 <meta property="og:site_name" content="WatcherDing Blog">
 <meta property="og:description" content="Android 设置类似Ios的Badger效果。首先android非定制系统不支持该效果，并不能做使android所有设备试用，受系统的限制。目前支持以下设备：Sony, Samsung, LG ,HTC, Xiaomi, ASUS, ADW, APEX, NOVE, Huawei, Zuk。并且使android 系统4.4之前的。">
-<meta property="og:updated_time" content="2016-10-15T13:17:39.994Z">
+<meta property="og:updated_time" content="2016-10-15T13:23:49.853Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 设置 Badge">
 <meta name="twitter:description" content="Android 设置类似Ios的Badger效果。首先android非定制系统不支持该效果，并不能做使android所有设备试用，受系统的限制。目前支持以下设备：Sony, Samsung, LG ,HTC, Xiaomi, ASUS, ADW, APEX, NOVE, Huawei, Zuk。并且使android 系统4.4之前的。">
@@ -100,7 +100,7 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
+    scheme: 'Muse',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -347,15 +347,15 @@
 <h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><hr>
 <ol>
 <li><p>clone 代码，会得到名为ShortcutBadger的文件夹</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//可以放在任意位置</span></div><div class="line">git clone https:<span class="comment">//github.com/leolin310148/ShortcutBadger.git</span></div></pre></td></tr></table></figure>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//可以放在任意位置</span></div><div class="line">git clone https:<span class="comment">//github.com/leolin310148/ShortcutBadger.git</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>在android studio的project中导入moudle，选择项目主文件夹  右键–&gt;New –&gt;import Gradle Project –&gt;选择 ShortcutBadger 文件夹下的ShortcutBadger文件夹–&gt;Next  –&gt;Finsh。</p>
 </li>
 <li><p>然后选择项目右键–&gt;Open Moudle Setting  (或者F12)，在app选择Dependencies 添加刚刚的模块。</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//再引入模块时候可能会报一个错误，注释模块中的build.gradle大概23行代码</span></div><div class="line">	</div><div class="line"><span class="comment">//apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'</span></div><div class="line"><span class="comment">//apply from: './mvn-push.gradle'  //添加注释</span></div></pre></td></tr></table></figure>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//再引入模块时候可能会报一个错误，注释模块中的build.gradle大概23行代码</span></div><div class="line">	</div><div class="line"><span class="comment">//apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'</span></div><div class="line"><span class="comment">//apply from: './mvn-push.gradle'  //添加注释</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>下面我们开始添加设置代码</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> *添加</div><div class="line"> */</div><div class="line"><span class="comment">//在需要设置Badge 的时候添加以下代码</span></div><div class="line">int badgeCount = <span class="number">1</span>;</div><div class="line">ShortcutBadger.applyCount(context, badgeCount); </div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> *移除两种方法任选其一</div><div class="line"> */</div><div class="line"> <span class="comment">//第一种方法</span></div><div class="line"> ShortcutBadger.removeCount(context); </div><div class="line"> <span class="comment">//第二种方法</span></div><div class="line"> ShortcutBadger.applyCount(context, <span class="number">0</span>);</div></pre></td></tr></table></figure></li>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> *添加</div><div class="line"> */</div><div class="line"><span class="comment">//在需要设置Badge 的时候添加以下代码</span></div><div class="line"><span class="keyword">int</span> badgeCount = <span class="number">1</span>;</div><div class="line">ShortcutBadger.applyCount(context, badgeCount); </div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> *移除两种方法任选其一</div><div class="line"> */</div><div class="line"> <span class="comment">//第一种方法</span></div><div class="line"> ShortcutBadger.removeCount(context); </div><div class="line"> <span class="comment">//第二种方法</span></div><div class="line"> ShortcutBadger.applyCount(context, <span class="number">0</span>);</div></pre></td></tr></table></figure></li>
 </ol>
 
       
@@ -557,7 +557,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Muse
   </a>
 </div>
 
